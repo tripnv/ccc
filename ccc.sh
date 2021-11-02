@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 condaoutput=$(conda info --envs | sed '1,2d' | cut -d " " -f 1 )
 envs=()
 while IFS= read -r line
@@ -22,5 +22,5 @@ read -k 1 -r USERCHOICE
 
 if (( USERCHOICE <= i && USERCHOICE != 0 ))
 then
-	$(conda activate "${envs[$USERCHOICE]}")
+	conda activate "${envs[$USERCHOICE]}"
 fi
